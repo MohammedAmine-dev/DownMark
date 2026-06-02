@@ -1,14 +1,17 @@
-# DownMark 📄➜ Markdown
+# DownMark
 
-> Convert PDF, Word, Excel, PowerPoint and HTML files into clean, LLM-ready Markdown — from the command line or a drag-and-drop web UI.
+A personal project to optimize token usage in LLM workflows by converting documents to clean, structured Markdown. Markdown is a native, low-friction format for most LLM pipelines.
 
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Version](https://img.shields.io/badge/version-0.1.0-orange)
+DownMark is a Python utility to cleanly convert PDFs into structured Markdown. It also supports Word, Excel, PowerPoint, and HTML through a CLI and a simple Streamlit UI.
 
----
+## Highlights
 
-## Features
+- Focused on Markdown output suitable for ingestion and RAG pipelines
+- CLI and web UI
+- Optional OCR path for scanned PDFs
+- Post-processing to normalize Markdown output
+
+## Supported Formats
 
 | Format | Extension | Library used |
 |--------|-----------|--------------|
@@ -18,8 +21,6 @@
 | PowerPoint | `.pptx` `.ppt` | `python-pptx` |
 | HTML | `.html` `.htm` | `beautifulsoup4` + `markdownify` |
 
----
-
 ## Installation
 
 ```bash
@@ -28,11 +29,15 @@ cd DownMark
 pip install -e .
 ```
 
-> **Note for scanned PDFs**: OCR requires the Tesseract binary.
-> Windows: `choco install tesseract`
-> macOS: `brew install tesseract`
+OCR (for scanned PDFs) requires the Tesseract binary:
 
----
+```bash
+# Windows
+choco install tesseract
+
+# macOS
+brew install tesseract
+```
 
 ## CLI Usage
 
@@ -53,20 +58,13 @@ downmark scanned.pdf --ocr
 downmark --version
 ```
 
----
-
 ## Web UI
 
 ```bash
 streamlit run app.py
 ```
 
-Then open [http://localhost:8501](http://localhost:8501) in your browser.
-
-<!-- Add a screenshot or GIF here -->
-<!-- ![DownMark UI](./assets/demo.gif) -->
-
----
+Open http://localhost:8501 in your browser.
 
 ## Project Structure
 
@@ -75,21 +73,19 @@ DownMark/
 ├── cli.py                  # Click CLI entry-point
 ├── app.py                  # Streamlit drag-and-drop UI
 ├── converter/
-│   ├── core.py             # Router — dispatches to correct converter
+│   ├── core.py             # Router: dispatches to correct converter
 │   ├── pdf_converter.py
 │   ├── docx_converter.py
 │   ├── xlsx_converter.py
 │   ├── pptx_converter.py
 │   └── html_converter.py
 ├── utils/
-│   ├── file_handler.py     # File type detection & I/O
+│   ├── file_handler.py     # File type detection and I/O
 │   └── md_cleaner.py       # Markdown post-processing
 ├── tests/
 │   └── test_converters.py
 └── samples/                # Test files
 ```
-
----
 
 ## Running Tests
 
@@ -97,17 +93,6 @@ DownMark/
 pytest tests/ -v
 ```
 
----
-
-## Contributing
-
-1. Fork the repo
-2. Create a feature branch: `git checkout -b feat/my-feature`
-3. Commit your changes: `git commit -m "feat: add my feature"`
-4. Push and open a Pull Request
-
----
-
 ## License
 
-MIT — see [LICENSE](./LICENSE)
+MIT. See [LICENSE](./LICENSE).
