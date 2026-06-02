@@ -24,7 +24,7 @@ DownMark is a Python utility to cleanly convert PDFs into structured Markdown. I
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/DownMark.git
+git clone https://github.com/MohammedAmine-dev/DownMark.git
 cd DownMark
 pip install -e .
 ```
