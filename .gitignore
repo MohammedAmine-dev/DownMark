@@ -40,3 +40,5 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.log
+generate_samples.py
+samples/
