@@ -82,16 +82,11 @@ DownMark/
 ├── utils/
 │   ├── file_handler.py     # File type detection and I/O
 │   └── md_cleaner.py       # Markdown post-processing
-├── tests/
-│   └── test_converters.py
 └── samples/                # Test files
 ```
 
-## Running Tests
 
-```bash
-pytest tests/ -v
-```
+
 
 ## License
 
