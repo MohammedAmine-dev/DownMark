@@ -42,3 +42,4 @@ Thumbs.db
 *.log
 generate_samples.py
 samples/
+.venv_old
