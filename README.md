@@ -15,7 +15,7 @@ DownMark is a Python utility to cleanly convert PDFs into structured Markdown. I
 
 | Format | Extension | Library used |
 |--------|-----------|--------------|
-| PDF | `.pdf` | `pdfminer.six` + optional OCR via `pytesseract` |
+| PDF | `.pdf` | `PyMuPDF` (C/C++ based for performance) + optional OCR via `pytesseract` |
 | Word | `.docx` `.doc` | `python-docx` |
 | Excel | `.xlsx` `.xls` | `openpyxl` |
 | PowerPoint | `.pptx` `.ppt` | `python-pptx` |
